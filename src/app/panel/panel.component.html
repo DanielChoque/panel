@@ -1,0 +1,110 @@
+<br>
+<button (click)="consul()">actualizar</button>
+<br>
+<div class="row justify-content-center" style="margin-right: 1px" hidden>
+    <div *ngFor='let categoria of categorias'>
+        <div class="col-sm-3">
+            <div class="about-item scrollpoint sp-effect2">
+                <div style="text-align: center;">
+                    <a href="#" data-toggle="modal" data-target="rts"><img src="{{categoria.fileUrl}}" style="width: 50%" alt=""></a>
+                    <h2>{{categoria.name}} <br> {{categoria.subTitle}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row justify-content-center" style="margin-right: 1px">
+    <div class="col-sm-3">
+       <div class="about-item scrollpoint sp-effect2">
+           <div style="text-align: center;">
+            <a href="#" data-toggle="modal" data-target="#rts"><img src="assets/img/panel/ico_RTS.gif" style="width: 50%" alt=""></a>
+            <h2>R&Eacute;GIMEN TRIBUTARIO SIMPLIFICADO<br>(RTS)</h2>
+           </div>
+       </div>
+   </div>
+   <div class="col-sm-3">
+       <div class="about-item scrollpoint sp-effect2">
+           <div style="text-align: center;">
+            <a href="#" data-toggle="modal" data-target="#rau"><img src="assets/img/panel/ico_RAU.gif" style="width: 50%" alt=""></a>
+            <h2>R&Eacute;GIMEN AGROPECUARIO UNIFICADO<br>(RAU)</h2>
+           </div>
+       </div>
+   </div>
+   <div class="col-sm-3">
+       <div class="about-item scrollpoint sp-effect2">
+           <div style="text-align: center;">
+            <a href="#" data-toggle="modal" data-target="#sti"><img src="assets/img/panel/ico_STI.gif" style="width: 50%" alt=""></a>
+            <h2>SISTEMA TRIBUTARIO INTEGRADO<br> (STI)</h2>
+           </div>
+       </div>
+   </div>
+   <div class="col-sm-3">
+       <div class="about-item scrollpoint sp-effect2">
+       <div style="text-align: center;">
+            <a href="#" data-toggle="modal" data-target="#mod2"><img src="assets/img/panel/ico_RegGral.gif" style="width: 50%" alt=""></a>
+            <h2>R&Eacute;GIMEN<br>GENERAL</h2>
+       </div>
+       </div>
+   </div>
+   
+</div>
+
+<div id="container" style="background: aqua" hidden>
+    <input type="text" id="write" >
+    <ul id="keyboard">
+        <li class="symbol"><span class="off">@</span><span class="on">~</span></li>
+        <li class="symbol"><span class="off">1</span><span class="on">!</span></li>
+        <li class="symbol"><span class="off">2</span><span class="on">@</span></li>
+        <li class="symbol"><span class="off">3</span><span class="on">#</span></li>
+        <li class="symbol"><span class="off">4</span><span class="on">$</span></li>
+        <li class="symbol"><span class="off">5</span><span class="on">%</span></li>
+        <li class="symbol"><span class="off">6</span><span class="on">^</span></li>
+        <li class="symbol"><span class="off">7</span><span class="on">&amp;</span></li>
+        <li class="symbol"><span class="off">8</span><span class="on">*</span></li>
+        <li class="symbol"><span class="off">9</span><span class="on">(</span></li>
+        <li class="symbol"><span class="off">0</span><span class="on">)</span></li>
+        <li class="symbol"><span class="off">-</span><span class="on">_</span></li>
+        <li class="symbol"><span class="off">=</span><span class="on">+</span></li>
+        <li class="delete lastitem">Borrar</li>
+        <li class="tab">tab</li>
+        <li class="letter">q</li>
+        <li class="letter">w</li>
+        <li class="letter">e</li>
+        <li class="letter">r</li>
+        <li class="letter">t</li>
+        <li class="letter">y</li>
+        <li class="letter">u</li>
+        <li class="letter">i</li>
+        <li class="letter">o</li>
+        <li class="letter">p</li>
+
+        <li class="symbol lastitem"><span class="off">\</span><span class="on">|</span></li>
+        <li class="capslock">caps lock</li>
+        <li class="letter">a</li>
+        <li class="letter">s</li>
+        <li class="letter">d</li>
+        <li class="letter">f</li>
+        <li class="letter">g</li>
+        <li class="letter">h</li>
+        <li class="letter">j</li>
+        <li class="letter">k</li>
+        <li class="letter">l</li>
+        <li class="letter">ñ</li>
+        <li class="symbol"><span class="off">'</span><span class="on">&quot;</span></li>
+        <li class="return lastitem">return</li>
+        <li class="left-shift">shift</li>
+        <li class="letter">z</li>
+        <li class="letter">x</li>
+        <li class="letter">c</li>
+        <li class="letter">v</li>
+        <li class="letter">b</li>
+        <li class="letter">n</li>
+        <li class="letter">m</li>
+        <li class="symbol"><span class="off">,</span><span class="on">&lt;</span></li>
+        <li class="symbol"><span class="off">.</span><span class="on">&gt;</span></li>
+        <li class="symbol"><span class="off">/</span><span class="on">?</span></li>
+        <li class="right-shift lastitem">shift</li>
+    </ul>
+</div>
