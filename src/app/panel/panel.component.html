@@ -1,54 +1,50 @@
-<br>
-<button (click)="consul()">actualizar</button>
-<br>
-<div class="row justify-content-center" style="margin-right: 1px" hidden>
-    <div *ngFor='let categoria of categorias'>
+<div [hidden]="hiddenMenu">
+    <br><br>
+    <img src="assets/img/panel/inf.png" alt="" style="width: 50%; display: block; margin: auto;" >
+    <br><br><br><br>
+</div>
+<!--------------------------------Menu-->
+<div class="row justify-content-center" style="margin-right: 1px"  [hidden]="hiddenMenu">
+    <div *ngFor='let categoria of menuElements' >
         <div class="col-sm-3">
-            <div class="about-item scrollpoint sp-effect2">
-                <div style="text-align: center;">
-                    <a href="#" data-toggle="modal" data-target="rts"><img src="{{categoria.fileUrl}}" style="width: 50%" alt=""></a>
-                    <h2>{{categoria.name}} <br> {{categoria.subTitle}}</h2>
+            <div class="about-item scrollpoint sp-effect2"  >
+                <div style="text-align: center;" class="img-menu">
+                    <a href="#" data-toggle="modal" data-target="rts" (click)="subCat(categoria.id_panel)"><img src="{{categoria.url_image}}" style="width: 50%" alt=""></a>
+                    <h2 >{{categoria.name}} <br> {{categoria.subTitle}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------------------Sub Menu-->
+<div style="width: 70%">
+    <div class="row justify-content-center" style="margin-right: 1px"  [hidden]="hiddenMenuAux">
+        <div *ngFor='let categoria of subElements'>
+            <div class="col-sm-4">
+                <div class="about-item scrollpoint sp-effect2">
+                    <div style="text-align: center;" class="img-menu">
+                        <a href="#" data-toggle="modal" data-target="rts" (click)="subCat(categoria.id_panel)"><img src="{{categoria.url_image}}" style="width: 50%" alt="" ></a>
+                        <h2 >{{categoria.name}} <br> {{categoria.subTitle}}</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!--Button-a-Home-->
+<div class="div-home" [hidden]="hiddenMenuAux">
+    <button class="home-button" (click)="menuHome()"><img src="assets/img/panel/home.png" width="100px"></button>
+</div>
 
-<div class="row justify-content-center" style="margin-right: 1px">
-    <div class="col-sm-3">
-       <div class="about-item scrollpoint sp-effect2">
-           <div style="text-align: center;">
-            <a href="#" data-toggle="modal" data-target="#rts"><img src="assets/img/panel/ico_RTS.gif" style="width: 50%" alt=""></a>
-            <h2>R&Eacute;GIMEN TRIBUTARIO SIMPLIFICADO<br>(RTS)</h2>
-           </div>
-       </div>
-   </div>
-   <div class="col-sm-3">
-       <div class="about-item scrollpoint sp-effect2">
-           <div style="text-align: center;">
-            <a href="#" data-toggle="modal" data-target="#rau"><img src="assets/img/panel/ico_RAU.gif" style="width: 50%" alt=""></a>
-            <h2>R&Eacute;GIMEN AGROPECUARIO UNIFICADO<br>(RAU)</h2>
-           </div>
-       </div>
-   </div>
-   <div class="col-sm-3">
-       <div class="about-item scrollpoint sp-effect2">
-           <div style="text-align: center;">
-            <a href="#" data-toggle="modal" data-target="#sti"><img src="assets/img/panel/ico_STI.gif" style="width: 50%" alt=""></a>
-            <h2>SISTEMA TRIBUTARIO INTEGRADO<br> (STI)</h2>
-           </div>
-       </div>
-   </div>
-   <div class="col-sm-3">
-       <div class="about-item scrollpoint sp-effect2">
-       <div style="text-align: center;">
-            <a href="#" data-toggle="modal" data-target="#mod2"><img src="assets/img/panel/ico_RegGral.gif" style="width: 50%" alt=""></a>
-            <h2>R&Eacute;GIMEN<br>GENERAL</h2>
-       </div>
-       </div>
-   </div>
-   
+<!--Panel-Informacion-->
+
+<div *ngIf="panelItemUni.url_pdf">       
+    <iframe  [src]='pdfLink' frameborder="0" width="70%" height="850">
+        <p> 
+        Este navegador no est&aacute; configurado para mostrar PDF. Utiliza la opci&oacute;n enviar a correo<a href="https://www.impuestos.gob.bo/ckeditor/plugins/imageuploader/uploads/16409631a3.pdf">Click aqu&iacute; para descargar el PDF.</a> 
+        </p>
+    </iframe>  
 </div>
 
 <div id="container" style="background: aqua" hidden>
