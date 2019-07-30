@@ -1,5 +1,5 @@
 $(function(){
-	var $write = $('#write'),
+	var $write = $('#emailstring'),
 		shift = false,
 		capslock = false;
 	
@@ -53,3 +53,36 @@ $(function(){
 		$write.val($write.val() + character);
 	});
 });
+/**seteo de link */
+link="";
+function setLink(linke){
+    console.log("este estu link:"+linke);  
+	link=linke;
+	link="fdsfsdafsad"
+    }
+/********** envio de pdf********/
+$(document).ready(function() {
+    $().ajaxStart(function() {
+        $('#loading').show();
+        $('#result').hide();
+    }).ajaxStop(function() {
+        $('#loading').hide();
+        $('#result').fadeIn('slow');
+    });
+    $('#form, #fat, #fo3, #f4, #fo1e ').submit(function() {
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: {
+                "fcorreo1" : $('#emailstring').val(),
+                "mylink":$('#linksend').val()
+            },//$(this).serialize(),
+            success: function(data) {
+                $('#result').html(data);
+                
+            }
+        })
+        
+        return false;
+    }); 
+})  
