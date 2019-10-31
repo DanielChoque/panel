@@ -1,6 +1,6 @@
 <div [hidden]="hiddenMenu">
     <br><br>
-    <img src="assets/img/panel/inf.png" alt="" style="width: 50%; display: block; margin: auto;" >
+    <img src="assets/img/panel/panel.png" alt="" style="width: 50%; display: block; margin: auto;" >
     <br><br><br><br>
 </div>
 <!--------------------------------Menu-->
@@ -9,8 +9,8 @@
         <div class="col-sm-3">
             <div class="about-item scrollpoint sp-effect2"  >
                 <div style="text-align: center;" class="img-menu">
-                    <a href="#" data-toggle="modal" data-target="rts" (click)="subCat(categoria.id_panel)"><img src="{{categoria.url_image}}" style="width: 50%" alt=""></a>
-                    <h2 >{{categoria.name}} <br> {{categoria.subTitle}}</h2>
+                    <a href="#" data-toggle="modal" data-target="rts" (click)="subCat(categoria.id_panel)"><img src="{{NetWork}}{{categoria.url_image}}" style="width: 50%" alt=""></a>
+                    <h2 class="h2-u">{{categoria.name}} <br> {{categoria.subTitle}}</h2> 
                 </div>
             </div>
         </div>
@@ -20,7 +20,14 @@
 <div [hidden]="hiddenMenuAux" class="header-button" style=" z-index: 3;">
     <!--Titulo Sub Menu-->
     <div>
-        <div class="cuadrado"><h2 style="color: #002855;margin-top: -5px;font-size: 35px"> <img src="{{itemSub.url_image}}" style="width: 120px" > {{itemSub.name}}</h2></div>
+        <div class="cuadrado">
+            <h2 style="color: #002855;margin-top: -5px;font-size: 35px"> 
+                <img src="{{NetWork}}{{itemSub.url_image}}" style="width: 120px" > {{itemSub.name}}
+            </h2> 
+            <!--span>
+                <h2 style="color: #002855;" >{{textSub}}</h2>
+            </span-->
+        </div>
     </div>
     <!--Boton Back-->
     <div class="back-button" [hidden]="hiddenBackButton">
@@ -38,7 +45,7 @@
             <div class="col-sm-4">
                 <div class="about-item scrollpoint sp-effect2">
                     <div style="text-align: center;" class="img-menu">
-                        <a href="#" data-toggle="modal" data-target="rts" (click)="subCat(categoria.id_panel)"><img src="{{categoria.url_image}}" style="width: 50%" alt="" ></a>
+                        <a href="#" data-toggle="modal" data-target="rts" (click)="subCat(categoria.id_panel)"><img src="{{NetWork}}{{categoria.url_image}}" style="width: 50%" alt="" ></a>
                         <h2 >{{categoria.name}} <br> {{categoria.subTitle}}</h2>
                     </div>
                 </div>
@@ -49,8 +56,8 @@
 
 <!--Panel-Informacion-->
 <div *ngIf="panelItemUni.url_pdf" >       
-    <img class="info-image" src="{{panelItemUni.url_pdf}}" alt="">
-    <button class="home-button" (click)="sendEmail(panelItemUni.father_id)"> <img src="assets/img/panel/email.png" alt="" style="width: 100px; margin-left: 20px"></button>
+    <img class="info-image" src="{{NetWork}}{{panelItemUni.url_pdf}}" alt="">            
+    <button class="home-button" (click)="sendEmail(panelItemUni.father_id)"> <img src="assets/img/panel/email.png" alt="" style="width: 100px; margin-left: 20px;position: fixed; bottom: 700px"></button>
 </div>
 
 <!--Ventana Informacion-->
@@ -73,7 +80,7 @@
         <div id="result"></div>
         <img id="loading" src="assets/img/panel/envio.gif" style="width: 100px;" hidden>
     </div>
-    <form action="http://localhost/p/sendmail.php" id="fo3" >
+    <form action="https://info-contribuyente.000webhostapp.com/sendmail.php" id="fo3" >
         <p> 
             <img src="assets/img/panel/email.png"  style="width: 60px"> 
             <input type="email" id="emailstring"  name="emailModel" placeholder="ejemplo@gmail.com" style="color: black;width: 500px;" [(ngModel)]="emailModel" required>
@@ -135,3 +142,6 @@
         <li class="letter">.com</li>		
       </ul>
 </div>
+
+<h2 (click)="openFullscreen()"  [hidden]="!hiddenFull" ><img src="assets/img/panel/fullscreen.png" alt="" class="full-screen"></h2>
+<h2 (click)="closeFullscreen()" [hidden]="hiddenFull" ><img src="assets/img/panel/fullscreen.png" alt=""  class="full-screen"></h2>

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { PanelItem } from '../model/panel-item';
 import { ServItemService } from '../services/serv-item.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 
 
 @Component({
@@ -12,8 +13,9 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class PanelComponent implements OnInit {
   panelItemList:Array<PanelItem>=new Array<PanelItem>();
   itemsReg:Object[]=[];
+  textSub="";
 
-
+  hiddenFull:boolean=true;
   hiddenMenu:boolean=false;
   hiddenMenuAux:boolean=true;
   hiddenPanelInfo:boolean=true;
@@ -26,12 +28,17 @@ export class PanelComponent implements OnInit {
   idfatEmail
   linkSendEmail="";
   emailModel;
+  NetWork;
+  tamImg=this.sanitizer.bypassSecurityTrustResourceUrl("100px");
+  elem;
 ss
 link=this.sanitizer.bypassSecurityTrustResourceUrl("assets/img/panel/ico_RAU.gif")//"assets/img/panel/ico_RAU.gif";
-  constructor(private servItemService:ServItemService,public sanitizer: DomSanitizer) { }
+  constructor(private servItemService:ServItemService,public sanitizer: DomSanitizer,@Inject(DOCUMENT) private document: any) { }
 
   ngOnInit() {
     this.consul();
+    this.NetWork=this.servItemService.url
+    this.elem = document.documentElement;
   }
 
 
@@ -68,8 +75,9 @@ link=this.sanitizer.bypassSecurityTrustResourceUrl("assets/img/panel/ico_RAU.gif
       this.hiddenMenuAux=true
       this.hiddenPanelInfo=true;
       this.hiddenEmailSend=true;
+      this.textSub="";
       this.firstElemet.forEach(element => {
-        if(element.lavel==0){
+        if(element.father_id==0){
           this.menuElements.push(element);
         }
       });       
@@ -96,13 +104,14 @@ link=this.sanitizer.bypassSecurityTrustResourceUrl("assets/img/panel/ico_RAU.gif
       this.hiddenMenu=true;
       this.hiddenMenuAux=false;
       this.hiddenPanelInfo=true;      
+      
       this.firstElemet.forEach(element => {
         if(element.father_id==fa){
           this.subElements.push(element);
         }
         if(element.id_panel==fa){
            this.itemSub=element;
-        }             
+        }            
       });
       if(this.subElements.length==0){
         this.auxElements = new Array<PanelItem>();
@@ -113,9 +122,17 @@ link=this.sanitizer.bypassSecurityTrustResourceUrl("assets/img/panel/ico_RAU.gif
         });                  
       }
       if(this.panelItemUni.url_pdf!=""){
-        this.hiddenPanelInfo=false;
+        this.hiddenPanelInfo=false; 
+        this.firstElemet.forEach(element => {
+          if(element.id_panel==this.panelItemUni.father_id){
+            this.textSub="("+element.name+")";    
+          }
+        });               
         this.pdfLink=this.sanitizer.bypassSecurityTrustResourceUrl(this.panelItemUni.url_pdf);
+      }else{
+        this.textSub=""
       }
+
     } 
     
     transform(url: string): SafeResourceUrl {
@@ -159,5 +176,37 @@ link=this.sanitizer.bypassSecurityTrustResourceUrl("assets/img/panel/ico_RAU.gif
       this.emailModel="";
       document.getElementById("result").innerHTML="";
      }
-     
+
+     openFullscreen() {
+      this.hiddenFull=false;
+      if (this.elem.requestFullscreen) {
+        this.elem.requestFullscreen();
+      } else if (this.elem.mozRequestFullScreen) {
+        /* Firefox */
+        this.elem.mozRequestFullScreen();
+      } else if (this.elem.webkitRequestFullscreen) {
+        /* Chrome, Safari and Opera */
+        this.elem.webkitRequestFullscreen();
+      } else if (this.elem.msRequestFullscreen) {
+        /* IE/Edge */
+        this.elem.msRequestFullscreen();
+      }
+    }
+  
+    /* Close fullscreen */
+    closeFullscreen() {
+      this.hiddenFull=true;
+      if (this.document.exitFullscreen) {
+        this.document.exitFullscreen();
+      } else if (this.document.mozCancelFullScreen) {
+        /* Firefox */
+        this.document.mozCancelFullScreen();
+      } else if (this.document.webkitExitFullscreen) {
+        /* Chrome, Safari and Opera */
+        this.document.webkitExitFullscreen();
+      } else if (this.document.msExitFullscreen) {
+        /* IE/Edge */
+        this.document.msExitFullscreen();
+      }
+    }     
 }

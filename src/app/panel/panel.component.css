@@ -41,7 +41,8 @@
     list-style: none;
     }
         #keyboard li {
-            font-family: "Comic Sans", cursive;
+            /*font-family: "Comic Sans", cursive;*/
+            font-family: "Tahoma", cursive;
             font-size: 20px;
         float: left;
         margin: 0 5px 5px 0;
@@ -176,7 +177,8 @@
     }
     h2{
         margin-top: 10px;
-        font-family: "Comic Sans", cursive;
+          /*font-family: "Comic Sans", cursive;*/
+          font-family: "Tahoma", cursive;
         margin-bottom: 20px;
         margin-right: 10px;        
     }
@@ -193,9 +195,9 @@
     float: right;     
    }
    .info-image{
-       width: 70%;
+       width: 50%;
        background: #fff;
-       margin-left: 40px;
+       margin-left: 440px;
        margin-top: 25px;
        border-radius: 20px;
        border: 24px solid #fff;
@@ -243,4 +245,22 @@
     left: 1px;
     border-color: #e5e5e5;
     cursor: pointer;
+    }
+    .h2-u{
+        width: 150px;
+        margin: auto; 
+        margin-top: 15px;
+    }
+    .full-screen{
+        width: 40px; 
+        margin-left: 20px;
+        position: fixed; 
+        bottom: 0px
+    }
+    .full-screen:hover{
+        width: 41px; 
+        margin-left: 21px;
+        position: fixed; 
+        bottom: 0px;
+        cursor: pointer;
     }

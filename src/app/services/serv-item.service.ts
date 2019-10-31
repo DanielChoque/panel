@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
   providedIn: 'root'
 })
 export class ServItemService {
+  public url = "http://localhost/back-panel/";
   public headers = new Headers({
     'Content-Type' : 'application/json; charset=UTF-8',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
@@ -11,7 +12,10 @@ export class ServItemService {
 
   constructor(private http: Http) { }
   consultaResp() {
-    let url = "http://localhost/p/conec.php";
-    return this.http.get(url);
+   //let url = "https://daniel-berserk-hunter.000webhostapp.com/conec.php";
+   //let url = "http://localhost/p/conec.php";
+   //this.url = this.url+"/connect.php";
+   //let url = "http://sac.impuestos.gob.bo/panel/conec.php";
+    return this.http.get(this.url+"/connect.php");
   }
 }
