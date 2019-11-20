@@ -208,5 +208,15 @@ link=this.sanitizer.bypassSecurityTrustResourceUrl("assets/img/panel/ico_RAU.gif
         /* IE/Edge */
         this.document.msExitFullscreen();
       }
-    }     
+    } 
+     bigImg() {
+      console.log("danieel I")
+    }
+    
+     normalImg(e) {
+      console.log("danieel N")
+    }   
+    leave(e) {
+      console.log("leave");
+  } 
 }

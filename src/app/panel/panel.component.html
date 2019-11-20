@@ -1,6 +1,6 @@
 <div [hidden]="hiddenMenu">
     <br><br>
-    <img src="assets/img/panel/panel.png" alt="" style="width: 50%; display: block; margin: auto;" >
+    <img class="img-menu animated  zoomInRight delay-0.9s" src="assets/img/panel/panel.png" alt="" style="width: 50%; display: block; margin: auto;" >
     <br><br><br><br>
 </div>
 <!--------------------------------Menu-->
@@ -8,8 +8,8 @@
     <div *ngFor='let categoria of menuElements' >
         <div class="col-sm-3">
             <div class="about-item scrollpoint sp-effect2"  >
-                <div style="text-align: center;" class="img-menu">
-                    <a href="#" data-toggle="modal" data-target="rts" (click)="subCat(categoria.id_panel)"><img src="{{NetWork}}{{categoria.url_image}}" style="width: 50%" alt=""></a>
+                <div style="text-align: center;" class="img-menu animated  zoomInRight delay-0.9s" >
+                    <a href="#" data-toggle="modal" data-target="rts" (click)="subCat(categoria.id_panel)"><img src="{{NetWork}}{{categoria.url_image}}" style="width: 50%"  alt=""></a>
                     <h2 class="h2-u">{{categoria.name}} <br> {{categoria.subTitle}}</h2> 
                 </div>
             </div>
@@ -17,7 +17,7 @@
     </div>
 </div>
 <!--Cabezera-->
-<div [hidden]="hiddenMenuAux" class="header-button" style=" z-index: 3;">
+<div [hidden]="hiddenMenuAux" class="header-button animated  zoomInRight delay-0.9s" style=" z-index: 3;">
     <!--Titulo Sub Menu-->
     <div>
         <div class="cuadrado">
@@ -40,7 +40,7 @@
 </div>
 <!-------------------------------Sub Menu-->
 <div style="width: 70%">
-    <div class="row justify-content-center cuadrado-sub-menu" style="margin-right: 1px;transform: scale(0.8)"  [hidden]="hiddenMenuAux">
+    <div class="row justify-content-center cuadrado-sub-menu animated  zoomInRight delay-0.9s" style="margin-right: 1px;transform: scale(0.8)"  [hidden]="hiddenMenuAux">
         <div *ngFor='let categoria of subElements'>
             <div class="col-sm-4">
                 <div class="about-item scrollpoint sp-effect2">
@@ -55,8 +55,8 @@
 </div>
 
 <!--Panel-Informacion-->
-<div *ngIf="panelItemUni.url_pdf" >       
-    <img class="info-image" src="{{NetWork}}{{panelItemUni.url_pdf}}" alt="">            
+<div *ngIf="panelItemUni.url_pdf"  class="animated  zoomInRight delay-0.9s">       
+    <img class="info-image" src="{{NetWork}}{{panelItemUni.url_pdf}}" alt="" (onmouseover)="bigImg(this)" (onmouseout) ="normalImg(this)">            
     <button class="home-button" (click)="sendEmail(panelItemUni.father_id)"> <img src="assets/img/panel/email.png" alt="" style="width: 100px; margin-left: 20px;position: fixed; bottom: 700px"></button>
 </div>
 
