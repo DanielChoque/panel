@@ -5,6 +5,7 @@ import { Http } from '@angular/http';
 })
 export class ServItemService {
   public url = "http://localhost/back-panel/";
+  public urlEmail = "http://localhost/info-con/"+"sendmail.php";
   public headers = new Headers({
     'Content-Type' : 'application/json; charset=UTF-8',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
@@ -16,7 +17,9 @@ export class ServItemService {
    //let url = "http://localhost/p/conec.php";
    //this.url = this.url+"/connect.php";
    //let url = "http://sac.impuestos.gob.bo/panel/conec.php";
-   this.url="http://sac.impuestos.gob.bo/panel/"
-    return this.http.get("http://sac.impuestos.gob.bo/panel/conec.php");
+   //this.url="http://sac.impuestos.gob.bo/panel/"
+   // return this.http.get("http://sac.impuestos.gob.bo/panel/conec.php");
+
+    return this.http.get(this.url+"connect.php");
   }
 }

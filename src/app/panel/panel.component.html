@@ -80,7 +80,7 @@
         <div id="result"></div>
         <img id="loading" src="assets/img/panel/envio.gif" style="width: 100px;" hidden>
     </div>
-    <form action="https://info-contribuyente.000webhostapp.com/sendmail.php" id="fo3" >
+    <form action="{{NetworkEmail}}" id="fo3" >
         <p> 
             <img src="assets/img/panel/email.png"  style="width: 60px"> 
             <input type="email" id="emailstring"  name="emailModel" placeholder="ejemplo@gmail.com" style="color: black;width: 500px;" [(ngModel)]="emailModel" required>

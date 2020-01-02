@@ -29,6 +29,7 @@ export class PanelComponent implements OnInit {
   linkSendEmail="";
   emailModel;
   NetWork;
+  NetworkEmail;
   tamImg=this.sanitizer.bypassSecurityTrustResourceUrl("100px");
   elem;
 ss
@@ -39,6 +40,7 @@ link=this.sanitizer.bypassSecurityTrustResourceUrl("assets/img/panel/ico_RAU.gif
     this.consul();
     this.NetWork=this.servItemService.url
     this.elem = document.documentElement;
+    this.NetworkEmail=this.servItemService.urlEmail;
   }
 
 
