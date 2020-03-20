@@ -1,6 +1,7 @@
 <div [hidden]="hiddenMenu">
+    <img class="animated  zoomInRight delay-0.9s" src="assets/img/panel/header.png" alt="" style="width: 100%; display: block; margin: auto;padding-top: 33px;" >
     <br><br>
-    <img class="img-menu animated  zoomInRight delay-0.9s" src="assets/img/panel/panel.png" alt="" style="width: 50%; display: block; margin: auto;" >
+    <img class="img-menu animated  zoomInRight delay-0.9s" src="assets/img/panel/panel001.png" alt="" style="width: 40%; display: block; margin: auto;" >
     <br><br><br><br>
 </div>
 <!--------------------------------Menu-->
@@ -17,7 +18,7 @@
     </div>
 </div>
 <!--Cabezera-->
-<div [hidden]="hiddenMenuAux" class="header-button animated  zoomInRight delay-0.9s" style=" z-index: 3;">
+<div [hidden]="hiddenMenuAux" class="backgroundP header-button animated  zoomInRight delay-0.9s" style=" z-index: 3;">
     <!--Titulo Sub Menu-->
     <div>
         <div class="cuadrado">
@@ -31,11 +32,11 @@
     </div>
     <!--Boton Back-->
     <div class="back-button" [hidden]="hiddenBackButton">
-        <button class="home-button" (click)="buttonBack()"><img src="assets/img/panel/back.png" width="100px"></button>
+        <button class="home-button" (click)="buttonBack()"><img src="assets/img/panel/back001.png" width="100px"></button>
     </div>
     <!--Boton Home-->
     <div class="div-home" >
-        <button class="home-button" (click)="menuHome()"><img src="assets/img/panel/home.png" width="100px"></button>
+        <button class="home-button" (click)="menuHome()"><img src="assets/img/panel/home001.png" width="100px"></button>
     </div>
 </div>
 <!-------------------------------Sub Menu-->
@@ -57,7 +58,7 @@
 <!--Panel-Informacion-->
 <div *ngIf="panelItemUni.url_pdf"  class="animated  zoomInRight delay-0.9s">       
     <img class="info-image" src="{{NetWork}}{{panelItemUni.url_pdf}}" alt="" (onmouseover)="bigImg(this)" (onmouseout) ="normalImg(this)">            
-    <button class="home-button" (click)="sendEmail(panelItemUni.father_id)"> <img src="assets/img/panel/email.png" alt="" style="width: 100px; margin-left: 20px;position: fixed; bottom: 700px"></button>
+    <button class="home-button" (click)="sendEmail(panelItemUni.father_id)"> <img src="assets/img/panel/email.png" alt="" style="width: 100px; margin-left: 20px;position: fixed; bottom: 50%"></button>
 </div>
 
 <!--Ventana Informacion-->
@@ -143,5 +144,9 @@
       </ul>
 </div>
 
-<h2 (click)="openFullscreen()"  [hidden]="!hiddenFull" ><img src="assets/img/panel/fullscreen.png" alt="" class="full-screen"></h2>
-<h2 (click)="closeFullscreen()" [hidden]="hiddenFull" ><img src="assets/img/panel/fullscreen.png" alt=""  class="full-screen"></h2>
+<h2 (click)="openFullscreen()"  [hidden]="!hiddenFull" ><img src="assets/img/panel/fullscreen001.png" alt="" class="full-screen"></h2>
+<h2 (click)="closeFullscreen()" [hidden]="hiddenFull" ><img src="assets/img/panel/fullscreen001.png" alt=""  class="full-screen"></h2>
+
+<div [hidden]="hiddenMenu">
+    <img src="assets/img/panel/footerNew.png" alt="" class="footerP">
+</div>

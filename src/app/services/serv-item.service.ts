@@ -4,8 +4,10 @@ import { Http } from '@angular/http';
   providedIn: 'root'
 })
 export class ServItemService {
-  public url = "http://localhost/back-panel/";
-  public urlEmail = "http://localhost/info-con/"+"sendmail.php";
+  //public url = "http://localhost/back-panel/";
+  public url="http://sac.impuestos.gob.bo/panel.back/";
+  //public urlEmail = "http://localhost/info-con/"+"sendmail.php";
+  public urlEmail = "http://sac.impuestos.gob.bo/panel/"+"sendmail.php";
   public headers = new Headers({
     'Content-Type' : 'application/json; charset=UTF-8',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',

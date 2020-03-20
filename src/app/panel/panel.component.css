@@ -221,9 +221,12 @@
    }
    .header-button{
     position: sticky; 
-    top: 0px;background-image: linear-gradient(to right, rgb(35, 136, 194) , #002855);
+    /*top: 0px;background-image: linear-gradient(to right, rgb(35, 136, 194) , #002855); #d9d9d6, #76232f*/
+    top: 0px;
+    
     border: 20px solid;
-    border-image: linear-gradient(to right, rgb(35, 136, 194) , #002855) 1;
+    /*border-image: linear-gradient(to right,  #d9d9d6, #54575a) 1;*/
+    /*border-image: linear-gradient(to right,  #ac155a, #76232f) 1;*/
    }
    .button-send{
     font-family: "Comic Sans", cursive;
@@ -263,4 +266,11 @@
         position: fixed; 
         bottom: 0px;
         cursor: pointer;
+    }
+    .footerP {
+        width: 100%; 
+        /*display: block; */
+        margin: auto;
+        bottom: 27px;
+        position: fixed;
     }
