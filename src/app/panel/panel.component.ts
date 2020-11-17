@@ -143,15 +143,23 @@ link=this.sanitizer.bypassSecurityTrustResourceUrl("assets/img/panel/ico_RAU.gif
       }
       return this.sanitizer.bypassSecurityTrustResourceUrl(url);
      }
-     sendEmail(idfat){
+     sendEmail(idfat,id){
       this.hiddenBackButton=true;
       this.idfatEmail=idfat;
       this.itemSub=new PanelItem();
        var links
-       this.firstElemet.forEach(element => {         
-         if(element.id_panel==idfat){
-          links=element.target;
-         }
+       this.firstElemet.forEach(element => { 
+         //console.log("element.id_panel:"+element.target)        
+          if(element.id_panel==idfat){
+            links=element.target;
+            }
+          if(element.id_panel==id){
+              var str = element.target; 
+              var splitted = str.split("-"); 
+              if(splitted[0]=='sac'){
+                links=splitted[1]
+              }
+            }
        });
        this.panelItemUni =new PanelItem();
        this.itemSub.name="Ingresa tu Correo Electrónico:";

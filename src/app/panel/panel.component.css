@@ -216,7 +216,7 @@
     margin: 0 auto;
     }
     .cuadrado-sub-menu {         
-        background: #ffffff10;
+        background: #cf0d0d00;
         border-radius: 20px;        
    }
    .header-button{
@@ -225,6 +225,7 @@
     top: 0px;
     
     border: 20px solid;
+    border-color: #1114aa00;
     /*border-image: linear-gradient(to right,  #d9d9d6, #54575a) 1;*/
     /*border-image: linear-gradient(to right,  #ac155a, #76232f) 1;*/
    }
