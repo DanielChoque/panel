@@ -197,7 +197,7 @@
    .info-image{
        width: 50%;
        background: #fff;
-       margin-left: 440px;
+       margin-left: 15%;
        margin-top: 25px;
        border-radius: 20px;
        border: 24px solid #fff;
@@ -272,6 +272,6 @@
         width: 100%; 
         /*display: block; */
         margin: auto;
-        bottom: 27px;
+        bottom: 5%;
         position: fixed;
     }

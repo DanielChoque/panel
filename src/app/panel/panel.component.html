@@ -1,13 +1,16 @@
 <div [hidden]="hiddenMenu">
-    <img class="animated  zoomInRight delay-0.9s" src="assets/img/panel/header2020-11.png" alt="" style="width: 100%; display: block; margin: auto;padding-top: 33px;" >
+    <!--mg class="animated  zoomInRight delay-0.9s" src="assets/img/panel/header2020-11.png" alt="" style="width: 100%; display: block; margin: auto;padding-top: 33px;" -->
     <br><br>
+    <br>
+    <br>
+    <br>
     <img class="img-menu animated  zoomInRight delay-0.9s" src="assets/img/panel/panel003.png" alt="" style="width: 40%; display: block; margin: auto;" >
     <br><br><br><br>
 </div>
 <!--------------------------------Menu-->
 <div class="row justify-content-center" style="margin-right: 1px"  [hidden]="hiddenMenu">
     <div *ngFor='let categoria of menuElements' >
-        <div class="col-sm-5">
+        <div class="col-sm-2">
             <div class="about-item scrollpoint sp-effect2"  >
                 <div style="text-align: center;" class="img-menu animated  zoomInRight delay-0.9s" >
                     <a href="#" data-toggle="modal" data-target="rts" (click)="subCat(categoria.id_panel)"><img src="{{NetWork}}{{categoria.url_image}}" style="width: 50%"  alt=""></a>
@@ -57,7 +60,7 @@
 
 <!--Panel-Informacion-->
 <div *ngIf="panelItemUni.url_pdf"  class="animated  zoomInRight delay-0.9s">       
-    <img class="info-image" src="{{NetWork}}{{panelItemUni.url_pdf}}?9055845465" alt="" (onmouseover)="bigImg(this)" (onmouseout) ="normalImg(this)">            
+    <img class="info-image" src="{{NetWork}}{{panelItemUni.url_pdf}}?90558454" alt="" (onmouseover)="bigImg(this)" (onmouseout) ="normalImg(this)">            
     <button class="home-button" (click)="sendEmail(panelItemUni.father_id,panelItemUni.id_panel)"> <img src="assets/img/panel/email.png" alt="" style="width: 100px; margin-left: 20px;position: fixed; bottom: 50%"></button>
 </div>
 
@@ -74,7 +77,7 @@
     </iframe>  
 </div-->
 
-<div id="container" [hidden]="hiddenEmailSend" style="transform: scale(1.5)">
+<div id="container" [hidden]="hiddenEmailSend" >
     
     <br>
     <div style="text-align: center">
@@ -144,9 +147,47 @@
       </ul>
 </div>
 
+<div id="container"  >
+    
+    <br>
+    <div style="text-align: center">
+        <div id="result"></div>
+        <img id="loading" src="assets/img/panel/envio.gif" style="width: 100px;" hidden>
+    </div>
+    <form action="{{NetworkEmail}}" id="fo4" >
+        <p> 
+            <!--img src="assets/img/panel/email.png"  style="width: 60px"--> 
+            <input type="email" id="emailstring"  name="emailModel" placeholder="123456789012" style="color: black;width: 500px;" [(ngModel)]="emailModel" required>
+            <input type="text" name="" id="linksend" value="{{linkSendEmail}}" hidden>
+            <button class="button-send" type="submit" > <h2>Buscar</h2></button>
+        </p>  
+              		
+    </form>      
+      <br>
+    <ul id="keyboard">		
+        <li class="symbol"><span class="off">1</span><span class="on">!</span></li>
+        <li class="symbol"><span class="off">2</span><span class="on">@</span></li>
+        <li class="symbol"><span class="off">3</span><span class="on">#</span></li>
+        <li class="symbol"><span class="off">4</span><span class="on">$</span></li>
+        <li class="symbol"><span class="off">5</span><span class="on">%</span></li>
+        <li class="symbol"><span class="off">6</span><span class="on">^</span></li>
+        <li class="symbol"><span class="off">7</span><span class="on">&amp;</span></li>
+        <li class="symbol"><span class="off">8</span><span class="on">*</span></li>
+        <li class="symbol"><span class="off">9</span><span class="on">(</span></li>
+        <li class="symbol"><span class="off">0</span><span class="on">)</span></li>		
+        
+
+        <li class="return lastitem btne" (click)="buttonSalir()">Salir</li>
+        <li class="space1 lastitem" ></li>
+    
+        <li class="delete lastitem btnd">Borrar</li>
+        <li class="letter">.com</li>		
+      </ul>
+</div>
+
 <h2 (click)="openFullscreen()"  [hidden]="!hiddenFull" ><img src="assets/img/panel/fullscreen001.png" alt="" class="full-screen"></h2>
 <h2 (click)="closeFullscreen()" [hidden]="hiddenFull" ><img src="assets/img/panel/fullscreen001.png" alt=""  class="full-screen"></h2>
 
 <div [hidden]="hiddenMenu">
-    <img src="assets/img/panel/footerNew.png" alt="" class="footerP">
+    <img src="assets/img/panel/footerNew002.png" alt="" class="footerP">
 </div>

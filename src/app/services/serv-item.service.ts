@@ -4,8 +4,8 @@ import { Http } from '@angular/http';
   providedIn: 'root'
 })
 export class ServItemService {
-  //public url = "http://localhost/back-panel/";
-  public url="https://sac.impuestos.gob.bo/panel.back/";
+  public url = "http://localhost/panel.back2/";
+  //public url="https://sac.impuestos.gob.bo/panel.back2/";
   //public urlEmail = "http://localhost/info-con/"+"sendmail.php";
   public urlEmail = "https://sac.impuestos.gob.bo/panel.back/"+"sendmail.php";
   public headers = new Headers({
